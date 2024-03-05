@@ -16,7 +16,7 @@
   }
 
   .threads::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZ0lEQVR42qWTgQZFMQzF9un58z0wJl5c0zLYTjOnbdcV+/GsTAa2AwiILp1goPU3oETxHoB/vwINqYeTeEC2ZIBFPm3NgvdOtP/P7qSFAISVKKLDHxlQdbC4AeNBsshz0PD5Ms3W+Qelq8jray12JwAAAABJRU5ErkJggg==');
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZ0lEQVR42qWTgQbGMBgD/0e/N+8PxtmOiYWivuZU0v6ks61LYQbOXUBAwixDARNicx4SKOY5fL/NA+CD3gMFSUBfvecJWJpowJDHBPA+W8gQLZm2GoGscH9IMncGHZbX9h+WCj9/5z/v8r0DnAfNKQAAAABJRU5ErkJggg==');
   }
 
   .instagram::before {
