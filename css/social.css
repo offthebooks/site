@@ -1,0 +1,41 @@
+.core-links {
+  a::before {
+    display: inline-block;
+    content: ' ';
+    margin: 0 1em 0 0;
+    padding: 0;
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 2em;
+    aspect-ratio: 1;
+    vertical-align: middle;
+  }
+
+  .mastodon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAW0lEQVR42mNAB9Eed/8TwDClmBpJxBRoRmBMzUgAjxgCM2DTvHbJOxDGxSdoAC7+EDQA7nfCBmBqQGBMeRQ+eWkAYRg8IWFKEsaIlIjF2QxEAtobQrqhhPyNDgCM+kVSn21yFAAAAABJRU5ErkJggg==');
+  }
+
+  .threads::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAZ0lEQVR42qWTgQZFMQzF9un58z0wJl5c0zLYTjOnbdcV+/GsTAa2AwiILp1goPU3oETxHoB/vwINqYeTeEC2ZIBFPm3NgvdOtP/P7qSFAISVKKLDHxlQdbC4AeNBsshz0PD5Ms3W+Qelq8jray12JwAAAABJRU5ErkJggg==');
+  }
+
+  .instagram::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAdElEQVR42mKAgQrxzYBSyEAFQBgIoX5z/w+FgBWmjHYPhLl5293On8KkWPoWr/A87sIDMeAizMpDhugiKq2JZ/E69LAIZ/LWgV4U3fcOfO17sQPfrBekx+YjtLaNNE7/g67+B332/hc2grTA8yAyG3rYLb4ASiej9QF9kkIAAAAASUVORK5CYII=');
+  }
+
+  .tiktok::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVklEQVR42p2SAQYAQQzE+rn77/0wCxSB0QkFq2m7ZiLAVgUs/3z0glqCuZ6ESdt4ghosiPda4HJzFKQ7NakQeLVK4LdeAN0fzNYlhZgiwg5KlX8FJTY/8eCkH2EGlfsAAAAASUVORK5CYII=');
+  }
+
+  .youtube::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASklEQVR42q2MgQbAUAzE8v+A98Oboii82K7hOEhY53FEgvsmoJLEqJOMSz0ONHGg+R84UPsUENEDQ/RAME4gl0tRp6fS3KRjsl1e5e7OaxXk8ZUAAAAASUVORK5CYII=');
+  }
+
+  .twitch::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASUlEQVR42mNAA/9JwRiaSQQohvwvtv9PtgH/aWUAXAzBH8YG0D8WEJrJMAChGd0AOEb4GQNjT8LoGAiITv8MlGQe3IaRC8jRDACIb0VLxByk1wAAAABJRU5ErkJggg==');
+  }
+
+  .itch::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAaUlEQVR42pzRgQYAMQjG8T3o3rCe8KAjwv5svvqIOduvU6vy7R3NWsfjMA855oUMHgNJYBoCqYpnAOZZk/OxATXcRAIcDjth2HeAl4HqACIA6MTL/DMC9VEpDcAMesAtb+AfmZmJ4uwMAGJcEUSppE6+AAAAAElFTkSuQmCC');
+  }
+}
