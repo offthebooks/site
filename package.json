@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "server": "npx http-server . -a localhost -p 5252 -d false -c-1 -o"
+    "server": "npx http-server . -a localhost -p 5252 -d false -c-1 -o",
+    "update": "git submodule update --recursive --remote"
   },
   "devDependencies": {
     "prettier": "^3.1.1"
