@@ -1,0 +1,3 @@
+[submodule "crispnes"]
+	path = crispnes
+	url = https://github.com/offthebooks/crispnes.git
