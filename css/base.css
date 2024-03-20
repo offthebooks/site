@@ -42,7 +42,7 @@ p {
 
 h1 {
   margin-inline: auto;
-  border: 10px solid #722;
+  border: 0.5rem solid #722;
   border-radius: 100%;
   height: 12rem;
   aspect-ratio: 1;
