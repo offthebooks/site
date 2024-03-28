@@ -291,8 +291,8 @@
         let score = 0
 
         function scrollBackgrounds(offset) {
-          gameElement.style.backgroundPosition = `${Math.round(offset)}px 0px`
-          groundElement.style.backgroundPosition = `${Math.round(3 * offset)}px 0px`
+          gameElement.style.backgroundPosition = `${offset}px 0px`
+          groundElement.style.backgroundPosition = `${3 * offset}px 0px`
         }
 
         function scrollPipes(frameTime) {
