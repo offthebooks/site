@@ -1,0 +1,32 @@
+:root {
+  --col-background: #111;
+  --col-background-tint-1: #555;
+  --col-background-tint-2: #333;
+  --col-foreground: #fff;
+  --col-foreground-tint-1: #aaa;
+  --col-foreground-tint-2: #ddd;
+
+  --col-nes-btn: #d33;
+  --col-nes-btn-tint: #722;
+
+  --col-snes-btn-ab: #769;
+  --col-snes-btn-ab-tint: #435;
+  --col-snes-btn-xy: #aad;
+  --col-snes-btn-xy-tint: #558;
+
+  --col-sfc-btn-a: #c11;
+  --col-sfc-btn-a-tint: #611;
+  --col-sfc-btn-b: #fa2;
+  --col-sfc-btn-b-tint: #851;
+  --col-sfc-btn-x: #139;
+  --col-sfc-btn-x-tint: #025;
+  --col-sfc-btn-y: #074;
+  --col-sfc-btn-y-tint: #042;
+
+  --body-gap: 2rem;
+
+  --header-height: 3.75rem;
+  --body-default-margin: 1rem;
+  --button-radius: 0.25rem;
+  --interface-radius: 1rem;
+}
