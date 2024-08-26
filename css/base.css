@@ -6,8 +6,8 @@ html {
   padding: 0;
   width: 100lvw;
   min-height: 100lvh;
-  background: var(--col-background) url('../img/texture-bg.jpg') no-repeat center / cover;
-  color: #fff;
+  background: var(--col-background);
+  color: var(--col-foreground);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
@@ -35,23 +35,24 @@ a {
 p {
   padding: 1.5em 1em;
   border-radius: 0.5em;
-  color: #000;
-  background: linear-gradient(#ccb, #eed);
+  color: var(--col-dark);
+  background: var(--col-light-tint-2);
   box-shadow:
-    inset 0 -1px #fff,
-    0 4px #aab,
-    0 2em 2em #000;
+    inset 0 -1px var(--col-light),
+    0 4px var(--col-light-tint-1);
 }
 
 h1 {
   margin-inline: auto;
-  border: 0.5rem solid var(--col-nes-btn-tint);
   border-radius: 100%;
   height: 12rem;
   aspect-ratio: 1;
   font-size: 0;
-  background: url('../img/logo.jpg') no-repeat center / contain;
-  box-shadow: 0 2rem 2rem #000;
+  background: var(--col-background-tint-1) url('../img/logo.png') no-repeat center / contain;
+}
+
+h2 {
+  color: var(--col-foreground-tint-1);
 }
 
 .core-links {
@@ -73,4 +74,9 @@ h1 {
       inset 4px 1em 16px rgba(0, 0, 0, 0.15),
       0 4px var(--col-nes-btn-tint);
   }
+}
+
+footer {
+  text-align: center;
+  color: var(--col-background-tint-1);
 }

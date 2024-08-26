@@ -1,0 +1,36 @@
+@import url('./base.css');
+
+article {
+  margin-bottom: 2rem;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    .title::after {
+      margin-left: 0.5rem;
+      content: '\2192';
+    }
+    .date {
+      color: var(--col-background-tint-1);
+    }
+  }
+
+  blockquote {
+    position: relative;
+    background: var(--col-background-tint-2);
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    padding: 1.5rem 3rem;
+
+    &::before {
+      content: '\201C';
+      position: absolute;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 4em;
+      font-weight: 900;
+      left: 0.5rem;
+      top: 0.25rem;
+      color: var(--col-background-tint-1);
+    }
+  }
+}
