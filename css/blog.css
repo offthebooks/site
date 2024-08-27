@@ -6,10 +6,6 @@ article {
   a {
     display: flex;
     justify-content: space-between;
-    .title::after {
-      margin-left: 0.5rem;
-      content: '\2192';
-    }
     .date {
       color: var(--col-background-tint-1);
     }

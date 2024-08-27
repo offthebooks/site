@@ -48,7 +48,7 @@ h1 {
   height: 12rem;
   aspect-ratio: 1;
   font-size: 0;
-  background: var(--col-background-tint-1) url('../img/logo.png') no-repeat center / contain;
+  background: var(--col-background-tint-2) url('../img/logo.png') no-repeat center / contain;
 }
 
 h2 {

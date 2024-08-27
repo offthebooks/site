@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+<channel>
+  <title>Off The Books Blog</title>
+  <link>https://offthebooks.games/blog/</link>
+  <description>Spotfire Analytics</description>
+  <item>
+    <title>Spotfire Today</title>
+    <pubDate>Tue, 10 Oct 2023 21:04:59 +0000</pubDate>
+    <link>http://www.spotfire.tibco.com/en-xml-rss.html</link>
+    <description>All you need to know about Spotfire</description>
+  </item>
+</channel>
+</rss>
