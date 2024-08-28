@@ -1,9 +1,11 @@
-Welcome
-welcome
+title:Welcome
+slug:welcome
+quote:Here you'll find posts on the video game industry, development progress, and related anecdotes.
+date:
 
-Welcome to the Off The Books Blog. ^Here you'll find posts on the video game industry, development progress, and related anecdotes.^
+Welcome to the Off The Books Blog. Here you'll find posts on the video game industry, development progress, and related anecdotes.
 
-"It's 2024, do we really still do blogs?" Frankly, there aren't enough of them. Sometimes, writing needs a little space to breathe, a moment to calm itself down, and something sturdier than the ever shifting sands of social media.
+It's 2024, do we really still do blogs?" Frankly, there aren't enough of them. Sometimes, writing needs a little space to breathe, a moment to calm itself down, and something sturdier than the ever shifting sands of social media.
 
 There are fun things ahead to share, and leaving behind some additional context for posterity feels worth the effort.
 
