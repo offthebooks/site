@@ -34,7 +34,7 @@ const temp = `<a href="/"><h1>Off The Books</h1></a>
 
 function template({ title, description, image, url, content }) {
   const joinStr = `\n${tabCharacter}${tabCharacter}`
-  const tabbedContent = `${content.split('\n').join(joinStr)}`
+  const indentedContent = `${content.split('\n').join(joinStr)}`
   const copyright = `copyright ${new Date().getFullYear()}`
 
   return `<html>
@@ -53,7 +53,7 @@ function template({ title, description, image, url, content }) {
   </head>
   <body>
     <a href="/"><h1>Off The Books</h1></a>
-    ${tabbedContent}
+    ${indentedContent}
     <footer>${copyright}</footer>
   </body>
 </html>
@@ -62,10 +62,10 @@ function template({ title, description, image, url, content }) {
 
 // Automatically wraps any lines in p tags,
 // unless we are inside a formatted block:
-const blocks = new Map({
+const blocks = {
   '```': 'code',
   '>>>': 'blockquote'
-})
+}
 
 function markupLines(lines) {
   let block = null
@@ -73,8 +73,8 @@ function markupLines(lines) {
     const text = line.trim()
     if (!text.length) return []
 
-    if (blocks.has(line)) {
-      const tag = blocks.get(line)
+    if (line in blocks) {
+      const tag = blocks[line]
 
       if (block && block !== tag) {
         throw new Error('Cannot nest blocks.')
@@ -98,11 +98,11 @@ function markupLines(lines) {
 
 function generatePages(posts) {
   console.log(`Generating ${posts.length} pages`)
-  posts.forEach(({ title, slug, date, image, content }) => {
+  posts.forEach(({ title, slug, date, quote, image, content }) => {
     content = `<div><h2>${title}</h2><span class="date">${date}</span></div>\n${content}`
     const url = `${rootUrl}/post/${slug}`
     title = `${title} - Off The Books`
-    description = `${title} Blog Post`
+    description = quote ?? `${title} Blog Post`
     const html = template({ title, description, image, url, content })
     fs.writeFileSync(`${postDir}${slug}.html`, html)
   })
@@ -123,22 +123,24 @@ function build() {
     const lines = file.split('\n')
 
     const meta = {}
-    while (lines[0].contains(':')) {
+    console.log(typeof lines, typeof lines[0])
+    while (lines[0].includes(':')) {
       const [key, ...rest] = lines.shift().split(':')
       meta[key] = rest.join(':')
     }
 
     const date = unpublished
 
-    if (publishDate.length) {
-      date = new Date(publishDate)
+    if (meta.date.length) {
+      date = new Date(meta.date)
     } else if (!preview) {
       date = new Date()
-      const timestampedFile = [title, slug, date.toISOString(), publishDate, ...lines].join('\n')
+      const metaEntries = meta.entries.map((e) => e.join(':'))
+      const timestampedFile = [...metaEntries, ...lines].join('\n')
       fs.writeFileSync(path, timestampedFile)
     }
 
-    return { title, slug, date, content: markupLines(lines) }
+    return { ...meta, date, content: markupLines(lines) }
   })
 
   if (preview) {
