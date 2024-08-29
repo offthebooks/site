@@ -131,6 +131,7 @@ function generatePages(posts) {
 
 function generateIndex(posts) {
   console.log('Generating blog index')
+  const indexPosts = post.slice(0, 10)
 }
 
 function generateRSS(posts) {
@@ -151,7 +152,9 @@ function build() {
 
     meta.date ??= ''
     if (meta.date.length) {
-      meta.date = new Date(meta.date).toDateString()
+      const date = new Date(meta.date)
+      meta.date = date.toDateString()
+      meta.timestamp = date.getTime()
     } else if (!preview) {
       // Save file with publish date
       const date = new Date()
@@ -160,6 +163,7 @@ function build() {
       const timestampedFile = [...metaEntries, ...lines].join('\n')
       fs.writeFileSync(path, timestampedFile)
       meta.date = date.toDateString()
+      meta.timestamp = date.getTime()
     } else {
       meta.date = unpublished
     }
@@ -170,6 +174,7 @@ function build() {
   if (preview) {
     generatePages(posts.filter(({ date }) => date === unpublished))
   } else {
+    posts.sort((a, b) => b.timestamp - a.timestamp)
     generateRSS(posts)
     generateIndex(posts)
     generatePages(posts)
