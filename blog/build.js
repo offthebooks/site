@@ -4,7 +4,6 @@ const rootUrl = 'https://offthebooks.games/blog'
 const itemsDir = './blog/items/'
 const postDir = './blog/post/'
 const unpublished = 'UNPUBLISHED'
-const tabCharacter = '  '
 
 const args = new Set(process.argv.slice(2).map((s) => s.toLowerCase()))
 const preview = args.has('preview')
@@ -33,8 +32,6 @@ const temp = `<a href="/"><h1>Off The Books</h1></a>
 </article>`
 
 function template({ title, description, image, url, content }) {
-  const joinStr = `\n${tabCharacter}${tabCharacter}`
-  const indentedContent = `${content.split('\n').join(joinStr)}`
   const copyright = `copyright ${new Date().getFullYear()}`
 
   return `<html>
@@ -53,11 +50,27 @@ function template({ title, description, image, url, content }) {
   </head>
   <body>
     <a href="/"><h1>Off The Books</h1></a>
-    ${indentedContent}
+    <article>
+      ${content}
+    </article>
     <footer>${copyright}</footer>
   </body>
 </html>
 `
+}
+
+function tabs(count) {
+  return '  '.repeat(count)
+}
+
+// Change straight quotes to curly and double hyphens to em-dashes.
+function markupEntities(text) {
+  return text
+    .replace(/(^|[-\u2014\s(\["])'/g, '$1&lsquo;') // opening singles
+    .replace(/'/g, '&rsquo;') // closing singles & apostrophes
+    .replace(/(^|[-\u2014/\[(\u2018\s])"/g, '$1&ldquo;') // opening doubles
+    .replace(/"/g, '&rdquo;') // closing doubles
+    .replace(/--/g, '&mdash;') // em-dashes
 }
 
 // Automatically wraps any lines in p tags,
@@ -69,28 +82,36 @@ const blocks = {
 
 function markupLines(lines) {
   let block = null
+
   lines = lines.flatMap((line) => {
     const text = line.trim()
+    const tag = text in blocks && blocks[text]
+
+    if (block) {
+      // In a code block
+      if (tag) {
+        // Should be closing block tag
+        if (block !== tag) {
+          throw new Error('Cannot nest blocks.')
+        }
+        block = null
+        return `${tabs(3)}</${tag}>`
+      } else if (block === 'code') {
+        return line // Inside a code tag, return unaltered line
+      } else {
+        return `${tabs(4)}<p>${markupEntities(text)}</p>`
+      }
+    }
+
+    if (tag) {
+      // Opening tag
+      block = tag
+      return `${tabs(3)}<${tag}>`
+    }
+
     if (!text.length) return []
 
-    if (line in blocks) {
-      const tag = blocks[line]
-
-      if (block && block !== tag) {
-        throw new Error('Cannot nest blocks.')
-      }
-
-      // Close or open a block
-      if (block) {
-        block = null
-        return `</${tag}>`
-      } else {
-        block = tag
-        return `<${tag}>`
-      }
-    } else {
-      return block ? line : `<p>${line}</p>`
-    }
+    return `${tabs(3)}<p>${markupEntities(text)}</p>`
   })
 
   return lines.join('\n')
@@ -123,24 +144,27 @@ function build() {
     const lines = file.split('\n')
 
     const meta = {}
-    console.log(typeof lines, typeof lines[0])
     while (lines[0].includes(':')) {
       const [key, ...rest] = lines.shift().split(':')
       meta[key] = rest.join(':')
     }
 
-    const date = unpublished
-
+    meta.date ??= ''
     if (meta.date.length) {
-      date = new Date(meta.date)
+      meta.date = new Date(meta.date).toDateString()
     } else if (!preview) {
-      date = new Date()
-      const metaEntries = meta.entries.map((e) => e.join(':'))
+      // Save file with publish date
+      const date = new Date()
+      meta.date = date.toISOString()
+      const metaEntries = Object.entries(meta).map((e) => e.join(':'))
       const timestampedFile = [...metaEntries, ...lines].join('\n')
       fs.writeFileSync(path, timestampedFile)
+      meta.date = date.toDateString()
+    } else {
+      meta.date = unpublished
     }
 
-    return { ...meta, date, content: markupLines(lines) }
+    return { ...meta, content: markupLines(lines) }
   })
 
   if (preview) {

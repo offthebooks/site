@@ -21,7 +21,7 @@ body {
   max-width: 640px;
 
   div,
-  p {
+  .callout {
     margin-block: var(--body-gap);
   }
 }
@@ -33,7 +33,7 @@ a {
   font-weight: bold;
 }
 
-p {
+.callout {
   padding: 1.5em 1em;
   border-radius: 0.5em;
   color: var(--col-dark);
