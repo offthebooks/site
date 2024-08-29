@@ -26,11 +26,21 @@ body {
   }
 }
 
+hgroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 a {
   cursor: pointer;
   color: var(--col-nes-btn);
   text-decoration: none;
   font-weight: bold;
+}
+
+.date {
+  color: var(--col-background-tint-1);
 }
 
 .callout {

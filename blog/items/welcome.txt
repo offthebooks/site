@@ -12,4 +12,15 @@ Is there something that should be happening here?
 
 There are fun things ahead to share, and leaving behind some additional context for posterity feels worth the effort.
 
+```
+void helloWorld() {
+  printf("Hello World!");
+}
+
+void main() {
+  helloWorld();
+  return 0;
+}
+```
+
 In any case, thanks for dropping by, and hope to see you again soon!

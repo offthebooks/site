@@ -120,7 +120,7 @@ function markupLines(lines) {
 function generatePages(posts) {
   console.log(`Generating ${posts.length} pages`)
   posts.forEach(({ title, slug, date, quote, image, content }) => {
-    content = `<div><h2>${title}</h2><span class="date">${date}</span></div>\n${content}`
+    content = `<hgroup><h2>${title}</h2><span class="date">${date}</span></hgroup>\n${content}`
     const url = `${rootUrl}/post/${slug}`
     title = `${title} - Off The Books`
     description = quote ?? `${title} Blog Post`
