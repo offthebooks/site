@@ -1,35 +1,12 @@
 const fs = require('fs')
 
-const rootUrl = 'https://offthebooks.games/blog'
+const rootUrl = '/blog'
 const itemsDir = './blog/items/'
 const postDir = './blog/post/'
 const unpublished = 'UNPUBLISHED'
 
 const args = new Set(process.argv.slice(2).map((s) => s.toLowerCase()))
 const preview = args.has('preview')
-
-const temp = `<a href="/"><h1>Off The Books</h1></a>
-
-<h2>Blog</h2>
-
-<a href="./feed.rss">RSS Feed</a>
-
-<p>
-  Welcome to the Off The Books Blog. Here you'll find posts on the video game industry,
-  development, and related anecdotes.
-</p>
-
-<article>
-  <a href=""
-    ><span class="title">Post Title &rarr;</span>
-    <span class="date"
-      ><script>
-        document.write(new Date().toDateString())
-      </script></span
-    ></a
-  >
-  <blockquote>This is the pull quote from the post.</blockquote>
-</article>`
 
 function template({ title, description, image, url, content }) {
   const copyright = `copyright ${new Date().getFullYear()}`
@@ -50,9 +27,7 @@ function template({ title, description, image, url, content }) {
   </head>
   <body>
     <a href="/"><h1>Off The Books</h1></a>
-    <article>
-      ${content}
-    </article>
+    ${content}
     <footer>${copyright}</footer>
   </body>
 </html>
@@ -119,11 +94,17 @@ function markupLines(lines) {
 
 function generatePages(posts) {
   console.log(`Generating ${posts.length} pages`)
-  posts.forEach(({ title, slug, date, quote, image, content }) => {
-    content = `<hgroup><h2>${title}</h2><span class="date">${date}</span></hgroup>\n${content}`
-    const url = `${rootUrl}/post/${slug}`
+  posts.forEach(({ title, slug, url, date, quote, image, content }) => {
+    content = `<article>
+      <hgroup>
+        <h2>${title}</h2>
+        <span class="date">${date.toDateString?.() ?? date}</span>
+      </hgroup>\n${content}
+    </article>`
+
     title = `${title} - Off The Books`
     description = quote ?? `${title} Blog Post`
+
     const html = template({ title, description, image, url, content })
     fs.writeFileSync(`${postDir}${slug}.html`, html)
   })
@@ -131,7 +112,38 @@ function generatePages(posts) {
 
 function generateIndex(posts) {
   console.log('Generating blog index')
-  const indexPosts = post.slice(0, 10)
+  const articles = posts
+    .slice(0, 10)
+    .map(
+      ({ title, url, date, quote }) =>
+        `<article>
+      <a href="${url}">
+        <span class="title">${title} &rarr;</span>
+        <span class="date">${date.toDateString()}</span>
+      </a>
+      <blockquote>
+        <p>${quote}</p>
+      </blockquote>
+    </article>`
+    )
+    .join('\n')
+
+  const content = `<h2>Blog</h2>
+    <a href="./feed.rss">RSS Feed</a>
+    <p class="callout">
+      Welcome to the Off The Books Blog. Here you'll find posts on the video game industry,
+      development, and related anecdotes.
+    </p>
+    ${articles}
+    `
+
+  const title = 'Off The Books - Blog'
+  const url = '/blog/'
+  const description =
+    "Welcome to the Off The Books Blog. Here you'll find posts on the video game industry, development, and related anecdotes."
+
+  const html = template({ title, description, url, content })
+  fs.writeFileSync('./blog/index.html', html)
 }
 
 function generateRSS(posts) {
@@ -152,9 +164,7 @@ function build() {
 
     meta.date ??= ''
     if (meta.date.length) {
-      const date = new Date(meta.date)
-      meta.date = date.toDateString()
-      meta.timestamp = date.getTime()
+      meta.date = new Date(meta.date)
     } else if (!preview) {
       // Save file with publish date
       const date = new Date()
@@ -162,11 +172,12 @@ function build() {
       const metaEntries = Object.entries(meta).map((e) => e.join(':'))
       const timestampedFile = [...metaEntries, ...lines].join('\n')
       fs.writeFileSync(path, timestampedFile)
-      meta.date = date.toDateString()
-      meta.timestamp = date.getTime()
+      meta.date = date
     } else {
       meta.date = unpublished
     }
+
+    meta.url = `${rootUrl}/post/${meta.slug}`
 
     return { ...meta, content: markupLines(lines) }
   })
