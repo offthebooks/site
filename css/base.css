@@ -5,7 +5,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100lvw;
-  min-height: 100lvh;
+  height: 100%;
   background: var(--col-background);
   color: var(--col-foreground);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
@@ -14,13 +14,18 @@ html {
 }
 
 body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
   box-sizing: border-box;
   margin: 0 auto;
   padding: var(--body-gap);
+  padding-bottom: 5rem;
   width: 100%;
   max-width: 640px;
+  min-height: 100%;
 
-  div,
   .callout {
     margin-block: var(--body-gap);
   }
@@ -88,6 +93,8 @@ h2 {
 }
 
 footer {
-  text-align: center;
+  position: absolute;
+  bottom: 2rem;
+  align-self: center;
   color: var(--col-background-tint-1);
 }

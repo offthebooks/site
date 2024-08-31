@@ -1,14 +1,37 @@
 <?xml version="1.0" ?>
 <rss version="2.0">
 <channel>
-  <title>Off The Books Blog</title>
+  <title>Off The Books - Blog</title>
   <link>https://offthebooks.games/blog/</link>
-  <description>Spotfire Analytics</description>
+  <description>Here you'll find posts on the video game industry, development, and related anecdotes.</description>
+  
   <item>
-    <title>Spotfire Today</title>
-    <pubDate>Tue, 10 Oct 2023 21:04:59 +0000</pubDate>
-    <link>http://www.spotfire.tibco.com/en-xml-rss.html</link>
-    <description>All you need to know about Spotfire</description>
+    <title>Welcome</title>
+    <link>/blog/post/welcome</link>
+    <pubDate>2024-08-31T07:21:14.417Z</pubDate>
+    <description>
+      <![CDATA[Here you&rsquo;ll find posts on the video game industry, development progress, and related anecdotes.]]>
+    </description>
+    <content:encoded>
+      <![CDATA[<p>Welcome to the Off The Books Blog. Here you&rsquo;ll find posts on the video game industry, development progress, and related anecdotes.</p>
+      <p>&ldquo;It&rsquo;s 2024, do we really still do blogs?&rdquo; Frankly, there aren&rsquo;t enough of them. Sometimes, writing needs a little space to breathe, a moment to calm itself down, and something sturdier than the ever shifting sands of social media.</p>
+      <blockquote>
+        <p>Is there something that should be happening here?</p>
+      </blockquote>
+      <p>There are fun things ahead to share, and leaving behind some additional context for posterity feels worth the effort.</p>
+      <code>
+void helloWorld() {
+  printf("Hello World!");
+}
+
+void main() {
+  helloWorld();
+  return 0;
+}
+      </code>
+      <p>In any case, thanks for dropping by, and hope to see you again soon!</p>]]>
+    </content:encoded>
   </item>
+  
 </channel>
-</rss>
+</rss> 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta property="og:title" content="${title} - Off The Books" />
     <meta property="og:url" content="/blog/post/${slug}" />
-    <meta property="og:image" content="${image ?? '/img/logo.jpg'}" />
+    <meta property="og:image" content="${image}" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/img/logo.jpg" />
     <link href="/css/blog.css${cache_buster}" rel="stylesheet" />
@@ -15,7 +15,7 @@
     <article>
       <hgroup>
         <h2>${title}</h2>
-        <span class="date">${date.toDateString()}</span>
+        <span class="date">${date.toDateString?.() ?? date}</span>
       </hgroup>
       ${content}
     </article>
