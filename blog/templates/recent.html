@@ -10,7 +10,7 @@
     <meta property="og:image" content="/img/logo.jpg" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/img/logo.jpg" />
-    <link href="/css/blog.css?m0hdt1ua" rel="stylesheet" />
+    <link href="/css/blog.css${cache_buster}" rel="stylesheet" />
   </head>
   <body>
     <a href="/"><h1>Off The Books</h1></a>
@@ -20,17 +20,17 @@
       Welcome to the Off The Books Blog. Here you&rsquo;ll find posts on the video game industry,
       development, and related anecdotes.
     </p>
-    
+    ${each(posts, ({url, title, date, quote}) => `
     <article>
-      <a href="/blog/post/welcome">
-        <span class="title">Welcome &rarr;</span>
-        <span class="date">Thu Aug 29 2024</span>
+      <a href="${url}">
+        <span class="title">${title} &rarr;</span>
+        <span class="date">${date.toDateString()}</span>
       </a>
       <blockquote>
-        <p>Here you&rsquo;ll find posts on the video game industry, development progress, and related anecdotes.</p>
+        <p>${quote}</p>
       </blockquote>
     </article>
-    
+    `)}
     <footer>copyright 2024</footer>
   </body>
 </html>
