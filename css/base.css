@@ -26,8 +26,56 @@ body {
   max-width: 640px;
   min-height: 100%;
 
-  .callout {
-    margin-block: var(--body-gap);
+  .callout,
+  menu {
+    margin-block: var(--block-margin);
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--block-margin);
+
+  menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 1rem;
+
+    li {
+      &:nth-of-type(4n + 1) {
+        --button-color: var(--col-sfc-btn-x);
+        --button-shadow: var(--col-sfc-btn-x-tint);
+      }
+      &:nth-of-type(4n + 2) {
+        --button-color: var(--col-sfc-btn-y);
+        --button-shadow: var(--col-sfc-btn-y-tint);
+      }
+      &:nth-of-type(4n + 3) {
+        --button-color: var(--col-sfc-btn-a);
+        --button-shadow: var(--col-sfc-btn-a-tint);
+      }
+      &:nth-of-type(4n + 4) {
+        --button-color: var(--col-sfc-btn-b);
+        --button-shadow: var(--col-sfc-btn-b-tint);
+      }
+
+      border-radius: 2rem;
+      background: var(--button-color);
+      box-shadow:
+        0 4px var(--button-shadow),
+        var(--button-gloss);
+
+      a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        color: var(--col-light);
+        font-weight: bold;
+        text-shadow: 1px 1px 2px var(--button-shadow);
+      }
+    }
   }
 }
 
@@ -79,7 +127,7 @@ h2 {
     padding-block: 1em;
     border-radius: 2em;
     background-color: var(--col-nes-btn);
-    color: #eee;
+    color: var(--col-light);
     font-weight: bold;
     text-align: center;
     text-decoration: none;

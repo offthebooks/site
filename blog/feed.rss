@@ -8,27 +8,14 @@
   <item>
     <title>Welcome</title>
     <link>/blog/post/welcome</link>
-    <pubDate>2024-08-31T07:21:14.417Z</pubDate>
+    <pubDate>2024-09-01T22:34:12.782Z</pubDate>
     <description>
-      <![CDATA[Here you&rsquo;ll find posts on the video game industry, development progress, and related anecdotes.]]>
+      <![CDATA[Sometimes, writing needs a little space to breathe...]]>
     </description>
     <content:encoded>
       <![CDATA[<p>Welcome to the Off The Books Blog. Here you&rsquo;ll find posts on the video game industry, development progress, and related anecdotes.</p>
       <p>&ldquo;It&rsquo;s 2024, do we really still do blogs?&rdquo; Frankly, there aren&rsquo;t enough of them. Sometimes, writing needs a little space to breathe, a moment to calm itself down, and something sturdier than the ever shifting sands of social media.</p>
-      <blockquote>
-        <p>Is there something that should be happening here?</p>
-      </blockquote>
       <p>There are fun things ahead to share, and leaving behind some additional context for posterity feels worth the effort.</p>
-      <code>
-void helloWorld() {
-  printf("Hello World!");
-}
-
-void main() {
-  helloWorld();
-  return 0;
-}
-      </code>
       <p>In any case, thanks for dropping by, and hope to see you again soon!</p>]]>
     </content:encoded>
   </item>
