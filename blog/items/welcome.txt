@@ -1,0 +1,12 @@
+title:Welcome
+slug:welcome
+quote:Sometimes, writing needs a little space to breathe...
+date:2024-09-01T22:34:12.782Z
+
+Welcome to the Off The Books Blog. Here you'll find posts on the video game industry, development progress, and related anecdotes.
+
+"It's 2024, do we really still do blogs?" Frankly, there aren't enough of them. Sometimes, writing needs a little space to breathe, a moment to calm itself down, and something sturdier than the ever shifting sands of social media.
+
+There are fun things ahead to share, and leaving behind some additional context for posterity feels worth the effort.
+
+In any case, thanks for dropping by, and hope to see you again soon!
