@@ -26,17 +26,17 @@
       Welcome to the Off The Books Blog. Here you&rsquo;ll find posts on the video game industry,
       development, and related anecdotes.
     </p>
-    ${each(posts, ({url, title, date, quote}) => `
-    <article>
+    ${each(posts, ({url, title, date, dateStr, quote}) => `
+    <article class="blog-index">
       <a href="${url}">
         <span class="title">${title} &rarr;</span>
-        <span class="date">${date.toDateString()}</span>
+        <span class="date" title="${date.toUTCString()}">${dateStr}</span>
       </a>
       <blockquote>
         <p>${quote}</p>
       </blockquote>
     </article>
     `)}
-    <footer>copyright 2024</footer>
+    <footer>Copyright 2024</footer>
   </body>
 </html>

@@ -22,10 +22,10 @@
     <article>
       <hgroup>
         <h2>${title}</h2>
-        <span class="date">${date.toDateString?.() ?? date}</span>
+        <span class="date" title="${date.toUTCString?.()}">${dateStr}</span>
       </hgroup>
       ${content}
     </article>
-    <footer>copyright ${new Date().getFullYear()}</footer>
+    <footer>Copyright ${(new Date()).getFullYear()}</footer>
   </body>
 </html>

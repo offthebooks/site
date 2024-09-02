@@ -65,8 +65,8 @@ header {
       border-radius: 2rem;
       background: var(--button-color);
       box-shadow:
-        0 4px var(--button-shadow),
-        var(--button-gloss);
+        var(--button-gloss),
+        0 4px var(--button-shadow);
 
       a {
         display: inline-block;

@@ -3,20 +3,32 @@
 article {
   margin-block: var(--block-margin);
 
+  &:not(.blog-index) {
+    hgroup {
+      font-size: 1rem;
+      .date {
+        font-size: 0.85rem;
+      }
+    }
+    font-size: 1.25em;
+  }
+
   p {
     margin-block: 1.5rem;
   }
 
-  a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .title {
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    .date {
-      color: var(--col-background-tint-1);
+  &.blog-index {
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .date {
+        color: var(--col-background-tint-1);
+      }
     }
   }
 
