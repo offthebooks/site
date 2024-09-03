@@ -10,11 +10,12 @@ article {
         font-size: 0.85rem;
       }
     }
-    font-size: 1.25em;
+    font-size: 1.15em;
   }
 
   p {
     margin-block: 1.5rem;
+    hyphens: auto;
   }
 
   &.blog-index {

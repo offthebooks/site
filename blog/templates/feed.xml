@@ -7,7 +7,7 @@
   ${each(posts, ({url, title, date, quote, content}) => `
   <item>
     <title>${title}</title>
-    <link>${url}</link>
+    <link>https://offthebooks.games${url}</link>
     <pubDate>${date.toISOString()}</pubDate>
     <description>
       <![CDATA[${quote.trim()}]]>
