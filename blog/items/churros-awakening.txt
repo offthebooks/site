@@ -1,4 +1,4 @@
-title:Churro&rsquo;s Awakening
+title:Churro&#8217;s Awakening
 slug:churros-awakening
 image:/blog/media/churro-blink.png
 quote:If it's fun to simply move around in a game, that's more than half the battle.
