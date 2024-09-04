@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <rss version="2.0">
 <channel>
-  <title>Off The Books - Blog</title>
+  <title>Off The Books</title>
   <link>https://offthebooks.games/blog/</link>
   <description>Here you'll find posts on the video game industry, development, and related anecdotes.</description>
   ${each(posts, ({url, title, date, quote, content}) => `
@@ -18,4 +18,4 @@
   </item>
   `)}
 </channel>
-</rss> 
+</rss>
