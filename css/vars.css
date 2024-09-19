@@ -1,9 +1,9 @@
 :root {
-  --col-light: #eee;
-  --col-light-tint-1: #aaa;
-  --col-light-tint-2: #ddd;
-  --col-dark: #111;
-  --col-dark-tint-1: #555;
+  --col-light: #fff;
+  --col-light-tint-1: #bbb;
+  --col-light-tint-2: #eee;
+  --col-dark: #000;
+  --col-dark-tint-1: #444;
   --col-dark-tint-2: #222;
 
   --col-background: var(--col-light);
