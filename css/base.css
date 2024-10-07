@@ -123,6 +123,10 @@ a {
   color: var(--col-background-tint-1);
 }
 
+.center-text {
+  text-align: center;
+}
+
 .callout {
   padding: 1.5em 1em;
   border-radius: 0.5em;

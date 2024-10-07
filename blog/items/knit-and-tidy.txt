@@ -1,0 +1,41 @@
+title:Knit and Tidy
+slug:knit-and-tidy
+image:/blog/media/churro-moonlight.jpg
+quote:...modern pixel art games have a wide opening for new artistic expressions.
+date:2024-10-07T00:22:21.156Z
+
+Dots and lines brought the first video games to life, leaving the heavy lifting to our imaginations. Today, trillions of operations bring linear algebra to bear on unsuspecting triangles every second, giving incredible fidelity to the state of the art.
+
+Graphics and gameplay evolved together, but each has a distinct lineage. Yesterday's platforms have a lot of life left in them, and decades of innovation in game design surface in retro games every week. There are also more ways to play older games than ever before. It’s a bright day for fans of retro games.
+
+Much work has gone into replicating older games precisely for nostalgia and preservation. Shaders can recreate the look of CRT and LCD screens well. Nintendo Switch Online and FPGA consoles like Analogue Pocket have display modes for this. Even more options are available for emulators, so players can get the look they remember from that 13 inch Zenith in their childhood basement.
+
+We <em>should</em> have ways to play games designed for CRT screens that reflect their original experiences, but modern pixel art games have a wide opening for new artistic expressions. While occasional 3D games get a unique and naturalistic treatment, <link|https://en.wikipedia.org/wiki/Ōkami|Ōkami> being a standout example, few pixel art games go beyond nearest-neighbor upscaling apart from occasional CRT or scanline shaders.
+
+Years ago, while browsing my feeds, I came across a meme with cross-stitched artwork. The specifics of the post didn’t stick, but what <em>did</em> was how similar cross-stitching and pixel art are. Cross-stitched artwork has a quaint and endearing quality, and it’s never criticized for its low resolution.
+
+One day curiosity got the better of me, and I mocked up some concepts to visualize my realization. Some options I considered were crocheted fabric, glass tiles, or other tile/masonry patterns, but ultimately I felt like cross-stitching and knit fabric would be the most recognizable. Below are some of my early tests. The Link's Awakening tests are 720p, an upscale of 5x (zoom in for detail).
+
+<image|/blog/media/ladx-cross-stitch.png|Mockup of a cross-stitch upscaled frame from Link's Awakening DX.>
+
+<image|/blog/media/ladx-knit-fabric.png|Mockup of a knit fabric upscaled frame from Link's Awakening DX.>
+
+<image|/blog/media/mm2-knit-fabric.png|Mockup of a knit fabric upscaled frame from Mega Man 2 for NES.>
+
+First takeaway was that smaller input dimensions had better results. Game Boy frames at 160 x 144 could sell the effect better than 256 x 240 NES screens. Also, the knit pattern appeared more distinct than the cross-stitched look at these sizes. Perhaps due to the alternating pattern between neighboring pixels.
+
+Some of my favorite recent gaming experiences have been wholesome and cozy titles, and I've been wanting to create something similarly comforting and approachable. A warm knit sweater really meshes with their chill vibe. This was exactly the tone I had in mind for Churro's Pico-8 project I had been tinkering with, so that was an obvious next mockup.
+
+<image|/blog/media/churro-knit-test.gif|Animated walk cycle of Churro, a little yellow bird, testing a manually applied upscale to look like knit fabric.>
+
+This look was more compelling to me than the purely pixel art based project I'd been working on, and I'd recently been getting acquainted with <link|https://godotengine.org|Godot>. The tools and editor would make building a lot faster. After a bit of tinkering, a shader for this knit look had become pretty convincing after just a few evenings. After arriving at specs to help heighten the look (160 x 90 pixels, with sound and colors inspired by the NES), and working out some early details in test levels, some friends suggested finding a way to make the game thematically match the aesthetic.
+
+<image|/blog/media/churro-moonlight.jpg|Churro, in-engine standing on a tree branch in the moonlight, pixels upscaled to appear like knit fabric.>
+
+Introducing <em>Churro: Defender of Darnwood</em>, a warm-and-fuzzy retro platformer. There is a lot still in flux about the game, but there are some fun play mechanics, a few rudimentary tilesets, sound effects, and songs for two of the worlds. There is a light story scenario planned, typical of platform games, and a number of in-progress designs for different pests, hazards, and bosses. What follows is an external link to a short teaser, with a first look at the progress on the visuals and the first test level. It's been fun sharing about development, and I wanted to be able to share progress without continuing to obscure the style.
+
+<link|https://youtu.be/X0-3ERNDhko|watch the teaser|/blog/media/churro-youtube-teaser.jpg>
+
+I'm not expecting to be able to stick to a rigid timeline, especially working in my free hours. Frankly, I'm not even sure what platforms to target a release for, but this project will be the primary focus of my game development time for the foreseeable future.
+
+The indie community online has been such a fun and welcoming space as I get back into game development, particularly on Mastodon. You can <link|https://mastodon.gamedev.place/@OffTheBooks|follow along there> for the most frequent updates, or at any of the accounts you can find on the <link|https://offthebooks.games|home page>. If you find me online, be sure to say <em>hello</em>. Thanks for stopping by!
