@@ -1,0 +1,15 @@
+title:Proto-Tapestry
+slug:proto-tapestry
+image:/blog/media/churro-yarn.jpg
+quote:If you're curious enough to give the prototype a try, Churro would love to hear what you think.
+date:2024-12-21T00:01:56.469Z
+
+It's been a long time coming, but after a quick round of feedback from some early friends-and-family testers, <em>Churro: Defender of Darnwood</em> now has a <link|https://offthebooksgames.itch.io/churro|prototype up on itch.io>!
+
+The build contains a single intro level that loops after you complete it. All told probably 5 minutes of gameplay if we're being generous. It's just enough to get a feel for play mechanics, and have a little fun double-jumping and dashing around. If you're curious enough to give the prototype a try, Churro would love to hear what you think.
+
+<image|/blog/media/churro-yarn.jpg|Churro, as a swatch of realistic knit fabric. This was my skill with "Photoshopping" at work, a real knit Churro does not yet exist.>
+
+Donations are available if anyone is excited enough to want to contribute to development. However, please do <strong>not</strong> feel bad bypassing "donate" to download. It's a very brief glimpse, and not what I'd expect anybody to part with hard earned money to play.
+
+Very thankful for anyone who takes interest, and would be glad to hear any feedback you might have.
