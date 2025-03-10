@@ -1,6 +1,6 @@
 title:Chip Away
 slug:chip-away
-quote:occasionally, someone asks me how they should learn to make games.
+quote:...occasionally, someone asks me how they should learn to make games.
 date:2025-03-10T21:06:32.376Z
 
 My opinion isn't excessively sought after, but occasionally, someone asks me how they should learn to make games.
