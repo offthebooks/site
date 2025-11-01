@@ -1,0 +1,29 @@
+name: Update crispnes Submodule
+
+on:
+  workflow_dispatch:  # Allows manual triggering from GitHub UI
+
+jobs:
+  update-crispnes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main repo with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update crispnes submodule
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+          cd crispnes
+          git checkout main
+          git pull origin main
+          cd ..
+
+          git add crispnes
+          git commit -m "chore: update crispnes submodule to latest main"
+          git push
