@@ -1,10 +1,10 @@
-name: Update crispnes Submodule
+name: Update All Submodules
 
 on:
-  workflow_dispatch:  # Allows manual triggering from GitHub UI
+  workflow_dispatch:
 
 jobs:
-  update-crispnes:
+  update-submodules:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,16 +14,11 @@ jobs:
           submodules: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update crispnes submodule
+      - name: Update all submodules to latest commit
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-
-          cd crispnes
-          git checkout main
-          git pull origin main
-          cd ..
-
-          git add crispnes
-          git commit -m "chore: update crispnes submodule to latest main"
+          git submodule update --remote
+          git add .
+          git commit -m "chore: update all submodules to latest commits" || echo "No changes to commit"
           git push
