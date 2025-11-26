@@ -1,0 +1,72 @@
+@import url('./base.css');
+
+article {
+  margin-block: var(--block-margin);
+
+  &:not(.blog-index) {
+    hgroup {
+      font-size: 0.95rem;
+    }
+    font-size: 1.2em;
+  }
+
+  p {
+    margin-block: 1.5rem;
+    hyphens: auto;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 500px;
+
+    &.pixel {
+      image-rendering: pixelated;
+    }
+  }
+
+  &.blog-index {
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .date {
+        color: var(--col-background-tint-1);
+      }
+    }
+  }
+
+  code {
+    display: block;
+    white-space: pre;
+    background: var(--col-background-tint-2);
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    padding: 0.25rem 1.5rem;
+    overflow-x: scroll;
+  }
+
+  blockquote {
+    position: relative;
+    background: var(--col-background-tint-2);
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    padding: 0.125rem 1rem 0.125rem 3rem;
+
+    &::before {
+      content: '\201C';
+      position: absolute;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 4em;
+      font-weight: 900;
+      left: 0.5rem;
+      top: 0.25rem;
+      color: var(--col-background-tint-1);
+    }
+  }
+}

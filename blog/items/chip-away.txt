@@ -1,0 +1,25 @@
+title:Chip Away
+slug:chip-away
+quote:...occasionally, someone asks me how they should learn to make games.
+date:2025-03-10T21:06:32.376Z
+
+My opinion isn't excessively sought after, but occasionally, someone asks me how they should learn to make games.
+
+My children charge into the playroom we've asked them to clean, and crumble under the weight of such a daunting request. The reality of their task however, is iterating on something they know very well how to do. Find an out-of-place toy, and put it where it belongs. When they get into that frame of mind, it's easier to confidently approach their chore.
+
+The biggest challenge of game development is not organizing a mental framework of physics, graphics, or networking. Regardless of how much prior education or experience you bring to making a game, every project will go through hundreds of cycles hitting an obstacle, discovering a viable solution, and continuing the journey.
+
+Putting a toy away may seem simplistic compared with the tasks of building a game, but conceptually, you need to get in the same headspace. The more iterations of problem solving you go through, the more natural <em>your</em> process will become, and the better prepared you will feel for, well, everything.
+
+This boils down to the core of my recommendation for anyone wanting to "learn to make games." Start making one. All games shift and take shape in the making, and run into many unforeseen challenges. Far more than sorting an object tree, or whatever, overcoming those challenges is what making games looks like.
+
+Don't know what you want to make? Find some indie games you like, and look at the tools their creators are using. Then follow a tutorial, or try to copy something you really enjoyed. If you still can't come up with something, are you sure you want to make games?
+
+The following analogy is more subtractive than the nature of building a game, but it still leaves a good picture of the creative mentality to hang onto. It's a small bit of wisdom from the sage of late twentieth century America, Wilson, the kindly neighbor from Home Improvement.
+
+>>>
+Tim: What're you doin'?
+Wilson: Just carving out a canoe, Tim.
+Tim: ...Sounds hard.
+Wilson: Not really, Tim &mdash; you just take a big block of wood, and chip away everything that's not a canoe.
+>>>

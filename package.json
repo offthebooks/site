@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "server": "npx http-server . -a localhost -p 5252 -d false -c-1 -o",
+    "update": "git submodule update --recursive --remote",
+    "blog:preview": "node lib/build.js preview",
+    "blog:publish": "node lib/build.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1"
+  }
+}

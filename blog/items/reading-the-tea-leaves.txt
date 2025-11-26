@@ -1,0 +1,77 @@
+title:Reading the Tea Leaves
+slug:reading-the-tea-leaves
+image:/blog/media/switch-2-direct.jpg
+quote:For fans of Nintendo, this is what we’ll be working with for a while.
+date:2025-03-15T07:34:30.380Z
+
+Having been a fan of Nintendo, effectively, my entire life, it's hard to keep myself from ruminating on the upcoming launch of Switch 2 and the things we might see. This post collects my thoughts from the last few months around the upcoming Direct. There is zero insider information, just some "reading the tea leaves" of Nintendo's past and present.
+
+###
+Challenges
+###
+
+There are a few things working against Nintendo for this launch, most notably with price and perception. These difficulties undoubtedly factor into how they'll be positioning Switch 2, so they are good to keep in mind.
+
+There are more economic pressures than usual on Nintendo right now. Between component constraints, tariff threats, and the yen roughly the weakest it's been during a console launch, Nintendo can't have had an easy time arriving at a price point for Switch 2. Previously, I'd have put money on $349 as a continuity of their position making gaming accessible to families. They aren't cutting out more affordable Switch options though, and their brand new console doesn't need to hit the mainstream audience quite as hard as the Wii had to. It wouldn't be too surprising to see it priced anywhere up to $449 at this point. It's not unreasonable to think they still want to come in well under a PlayStation 5 or Xbox Series X though. If I had to put a number on it, $389 feels about right to me.
+
+There is also a sentiment going around that there's not enough new here to warrant an upgrade. Nintendo isn't the only strong option for handheld gaming the way it was when the Switch first launched. There is a sizeable wait-and-see crowd that thinks Switch 2 still has to prove itself, and others are crying <em>2 Little 2 Late</em>.
+
+###
+Opportunities
+###
+
+Nintendo smashed back into the gaming zeitgeist with the original Switch, and the last eight years have continued to be full of discussions, rumors, and leaks. Many eyes are on Nintendo, and they can't afford for this presentation to fall flat. You can find reaction videos from past announcements that leave fans in stunned excitement, and Nintendo will be trying to fill this Direct with many of these moments. There are opportunities to "break the Internet" with potential announcements here. Expect Nintendo to pull out all the stops.
+
+There are two strategies that could bolster the momentum of the Switch into this next generation. These bets could be wrong, but they play into a number of my game predictions.
+
+Nintendo traditionally releases a game, and moves on to what's next. They tiptoed into the arena of supporting games with continued updates this generation with a mix of short- and long-term DLC. Big franchises like <em>Mario Kart 8 Deluxe</em> and <em>Super Smash Bros. Ultimate</em> saw updates that spanned multiple years with new characters and content. Other titles like <em>Animal Crossing</em> and <em>Super Mario Maker 2</em> let some fans down with minor or brief support. Nintendo is likely planning for Switch 2 to be as long-lived as the original Switch, so we might see some key franchises get support throughout the Switch 2 generation.
+
+While game announcements from Nintendo have gone cold in the lead-up to Switch 2, there are still 150 million people out there with an original Switch. Quite possibly, a few thousand customers bought one just yesterday. Nintendo put all their eggs in one basket, combining their mobile and home consoles, and they'll want a smooth transition to carry customers forward. People have discussed how they'll handle new games on Switch 2 without abandoning the huge existing customer base. My gut says they'll adopt a strategy we've seen before. I'm referring, of course, to the Game Boy DX line of games. Games compatible with the original Game Boy, but with color and other enhancements for Game Boy Color.
+
+That's a good segue into talking about games, with the only original Switch title we can be fairly certain will make some manner of appearance on April 2nd.
+
+###
+Metroid Prime 4
+###
+
+Nintendo first announced <em>Metroid Prime 4</em> with a logo in the early days of the Switch. Despite its tumultuous development history, it has been reiterated as a Switch title. Some have suggested this might be a “dual SKU” game that has separate Switch and Switch 2 versions a la <em>Twilight Princess</em> (GameCube and Wii) and <em>Breath of the Wild</em> (Wii U and Switch). While I don't expect two versions of this game on shelves, I also wouldn't expect it to be merely a standard Switch game when played on Switch 2. Prime 4 isn't itself a reason to justify a separate DX-like line of software release. However, the Switch is still an actively developed console, and offering game makers a means to bridge current efforts onto the new console would make sense for everyone. Allowing for potential features like enhanced performance or DLSS upscaled resolutions, while still allowing games to reach the huge Switch user base, is a win-win-win for Nintendo, developers, and customers.
+
+###
+Mario Kart
+###
+
+Being the first Switch 2 footage we've seen, Mario Kart is nearly a mortal lock to be a launch title. <em>Mario Kart 8 Deluxe</em> is second only to <em>Wii Sports</em> as Nintendo's best-selling game of all time, and Wii Sports was certainly boosted by being a pack-in game from day one of Wii sales. Mario Kart 8 Deluxe has been one of the most successful titles to get ongoing support, and it could really prop up Switch Online subscriptions to have continued support for Mario Kart on Switch 2. It could get new tracks, updates, and characters throughout the life of the console. Being a strong multiplayer experience though, we'll need some other big titles while we wait for friends to get a Switch 2.
+
+###
+Mario
+###
+
+<em>Super Mario Odyssey</em> tops many Mario tier lists, and <em>Super Mario Bros. Wonder</em> was a great surprise to get late in the Switch cycle. Certainly though, someone has been working on a new 3D Mario for years, and now is the time to see it. My gut says it won't be Odyssey 2. I might stray from the majority opinion here, but Bowser's Fury was a strong prototype for a potential future direction for Mario. While Mario may not benefit from an open world the same way that Zelda does, it's a direction they've certainly considered. As a long shot, Mario Galaxy 3 is the game I'd like to see. It's a flexible formula that still has much to explore. This would also pair nicely with the <em>Super Mario Galaxy 2</em> release that was sorely missed on Switch if they need a holdover before an original release is ready.
+
+###
+Zelda
+###
+
+Unless they’re straying far from historical precedent, we won’t see a new 3D Zelda game at launch. There simply hasn't been enough time. However, <em>Breath of the Wild</em> was inexorably bound to the launch of the Switch, and they know people will be looking for Zelda to make some kind of appearance. There have been rumors of enhanced versions of BotW or TotK, but those are recent games that will already be playable on Switch 2. They wouldn't really add excitement or drama to the presentation, but you know what would? Finally launching the <em>Wind Waker</em> and <em>Twilight Princess</em> ports that we have not stopped talking about for more than 6 years.
+
+###
+Silksong
+###
+
+Possibly the only thing as hotly anticipated than the Zelda remakes and the Switch 2 itself, the follow-up to <em>Hollow Knight</em> comes up before nearly every Nintendo Direct. Strictly speaking, Nintendo and Team Cherry don't need each other, but this Direct would put a lot of eyes on Silksong from a broader Switch audience. Simultaneously, news about Silksong is in such demand, that it would bring a ton of PC and core gamer eyeballs that are already inclined to look past the Switch 2. Any official release information about Silksong is undoubtedly going to command millions of views. And if I'm right about a cross-compatible software option with Switch 2 enhancements, this is a great third-party candidate.
+
+###
+Animal Crossing
+###
+
+Admittedly, this prediction is out there, but the team that made <em>Splatoon 3</em> and <em>Animal Crossing: New Horizons</em> has certainly been working on something. These two games are now some of Nintendo's heaviest hitters, but here’s why I’m leaning towards Animal Crossing. Splatoon is a huge franchise, but the Switch has already seen two Splatoon games. It has not caught on as well in the US, and for better or worse, Nintendo seems to come out strong for Western audiences to secure global interest. Animal Crossing is another great candidate for long-term updates, events, and support through Switch Online. New Horizons was a huge cultural moment due to the Covid pandemic. And while few people are still isolating at home, the world is full of reasons to seek the escape of picking fruit and catching fish with your favorite villagers.
+
+###
+And the rest
+###
+
+Another thing to count on is the unexpected. If we've learned nothing from Labo, Alarmo, and Nintendo Music, it seems like Nintendo loves to bring something out of left field. What could be the Arms or 1-2-Switch of this launch? Mario Paint remake using the new mouse functionality? Sakurai's secret project?
+
+There are some major franchises on this list, and we'll see a number of them in the Direct. We shouldn't expect much more than two to be available at launch however. Keeping momentum for Switch 2 depends on people seeing a steady flow of games in the pipeline, and each of these titles would deserve some space to breathe. Not to mention, there has continued to be a steady flow of indies, and those will begin moving to Switch 2 as well.
+
+It seems we're long past the days of the 5-year console cycle. For fans of Nintendo, this is what we'll be working with for a while. Here's to hoping Switch 2 lives up to our many great expectations.

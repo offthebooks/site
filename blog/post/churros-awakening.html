@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <title>Churro&#8217;s Awakening - Off The Books</title>
+    <meta name="description" content="If it&rsquo;s fun to simply move around in a game, that&rsquo;s more than half the battle." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta property="og:title" content="Churro&#8217;s Awakening - Off The Books" />
+    <meta property="og:site_name" content="Off The Books" />
+    <meta property="og:description" content="If it&rsquo;s fun to simply move around in a game, that&rsquo;s more than half the battle." />
+    <meta property="og:url" content="/blog/post/churros-awakening" />
+    <meta property="og:image" content="/blog/media/churro-blink.png" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/img/icon.png" />
+    <link href="/css/blog.css?m89w5jai" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1>Off The Books</h1></a>
+      <menu>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/blog/feed.rss">RSS</a></li>
+      </menu>
+    </header>
+    <article>
+      <hgroup>
+        <h2>Churro&#8217;s Awakening</h2>
+        <span class="date" title="Wed, 04 Sep 2024 23:22:43 GMT">Sep 4, 2024</span>
+      </hgroup>
+      <p>The active project around here is a 2D retro platform game starring <em>Churro</em>, an eight-by-eight pixel birdie. Unless you&rsquo;ve been following <em>Off The Books</em> elsewhere, you probably haven&rsquo;t seen her around before. Here&rsquo;s some background on our feathered heroine to get you up to speed.</p>
+      <p><img class="pixel" src="/blog/media/churro-blink.png" alt="Yellow pixel-art bird." /></p>
+      <p>Her first design came from reviving an old project, <em><a href="https://offthebooks.games/build-a-bird">Build-A-Bird</a></em>. During <em><a href="https://en.wikipedia.org/wiki/Flappy_Bird">Flappy Bird&rsquo;s</a></em> peak popularity, every app store was being flooded with clones. It was everywhere, and I had the idea to parody the act of making clones itself. Letting people supply images for the main components of the game, they could create their own clone with little effort. It also was a chance to test the mobile web as a game platform. The initial game had bland artwork, intending to nudge you into supplying your own, but few people bothered to participate in the gag.</p>
+      <p>Back in March, it occurred to me that <em>Build-a-Bird</em> would be fun to bring back. JavaScript had come a long way over the last ten years, and while the project is mostly a series of game dev anti-patterns, it was pretty easy to clean up. Because very few people had used their own images, adding friendlier default art felt like a way to make the game more approachable. I had recently worked with low color 8x8 tiles while <a href="https://mastodon.gamedev.place/@OffTheBooks/111970184615755837">exploring NES development</a>, and Churro was first pecked out in a custom tile editor (a topic for another day), using colors from the NES palette.</p>
+      <p><img src="/blog/media/build-a-bird-screen.png" alt="Screen capture from Build-a-Bird game." /></p>
+      <p>Churro&rsquo;s name and her first few animations came while exploring <a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a>. Trying to start up a project for the NES had been fun, but it was clear that building a new game there would carry some heavy costs. With limited time for development, other platforms deserved a look. Hosting many simple retro games, and carrying similar low spec art requirements, I thought PICO-8 was a good place to start.</p>
+      <p>Working with PICO-8 one weekend coincidentally lined up with a <a href="https://ldjam.com/events/ludum-dare/55/">Ludum Dare</a> game jam. Despite not fitting the theme or completing a project, &ldquo;jamming&rdquo; at the same time as other game developers was energizing. <em>Chirpy Churro</em> ended up being little more than a single stage demo, but Churro seemed right at home as a platform game protagonist. Even those early gameplay mechanics were enjoyable, which was a great first spark for the project. If it&rsquo;s fun to simply move around in a game, that&rsquo;s more than half the battle.</p>
+      <p><img class="pixel" src="/blog/media/chirpy-churro.png" alt="Screen capture from Chirpy Churro PICO-8 demo." /></p>
+      <p>Quickly, ambitions for what a game with Churro could look like pushed against some of PICO-8&rsquo;s constraints. Even though a low spec game is still the plan, some of the harder limitations and lack of robust tools were going to hold some of the best ideas back.</p>
+      <p>Recent interactions with developers online brought along a lot of exposure to <a href="https://godotengine.org">Godot</a>, an open-source engine. It&rsquo;s overwhelmingly well regarded by people who work with it. Most of my previous experience has been with custom engines, but Godot comes with a full toolset that makes getting started really quick. After watching some tutorials and doing some tinkering, a test level was up and running in just a few hours.</p>
+      <p>Godot is a fully featured engine with a fantastic system for composing game objects using nodes in a scene tree, and it has a large and growing support community. The repository and first commits for Churro&rsquo;s latest incarnation went up on June 28th, and it&rsquo;s carrying the most momentum on a personal project I&rsquo;ve ever had.</p>
+      <p>There&rsquo;s no target date or roadmap yet, but there are more fun things yet to show about the project. If a chill retro platformer is in your wheelhouse, it should be fun to follow along. Apart from the blog, you can find a few social accounts to help keep tabs on progress <a href="https://offthebooks.games">here</a>.</p>
+    </article>
+    <footer>Copyright 2025</footer>
+  </body>
+</html>

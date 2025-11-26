@@ -1,0 +1,49 @@
+:root {
+  --col-light: #fff;
+  --col-light-tint-1: #bbb;
+  --col-light-tint-2: #eee;
+  --col-dark: #000;
+  --col-dark-tint-1: #444;
+  --col-dark-tint-2: #222;
+
+  --col-background: var(--col-light);
+  --col-background-tint-1: var(--col-light-tint-1);
+  --col-background-tint-2: var(--col-light-tint-2);
+  --col-foreground: var(--col-dark);
+  --col-foreground-tint-1: var(--col-dark-tint-1);
+  --col-foreground-tint-2: var(--col-dark-tint-2);
+
+  --col-nes-btn: #d33;
+  --col-nes-btn-tint: #722;
+
+  --col-snes-btn-ab: #769;
+  --col-snes-btn-ab-tint: #435;
+  --col-snes-btn-xy: #aad;
+  --col-snes-btn-xy-tint: #558;
+
+  --col-sfc-btn-a: #c11;
+  --col-sfc-btn-a-tint: #611;
+  --col-sfc-btn-b: #fa2;
+  --col-sfc-btn-b-tint: #851;
+  --col-sfc-btn-x: #139;
+  --col-sfc-btn-x-tint: #025;
+  --col-sfc-btn-y: #074;
+  --col-sfc-btn-y-tint: #042;
+
+  --body-gap: 2rem;
+  --block-margin: 1rem;
+
+  --header-height: 3.75rem;
+  --body-default-margin: 1rem;
+  --button-radius: 0.25rem;
+  --interface-radius: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    --col-background: var(--col-dark);
+    --col-background-tint-1: var(--col-dark-tint-1);
+    --col-background-tint-2: var(--col-dark-tint-2);
+    --col-foreground: var(--col-light);
+    --col-foreground-tint-1: var(--col-light-tint-1);
+    --col-foreground-tint-2: var(--col-light-tint-2);
+  }
+}

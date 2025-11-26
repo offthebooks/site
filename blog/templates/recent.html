@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <title>Off The Books - Blog</title>
+    <meta
+      name="description"
+      content="Here you'll find posts on the video game industry, development, and related anecdotes." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta property="og:title" content="Off The Books - Blog" />
+    <meta property="og:site_name" content="Off The Books" />
+    <meta
+      property="og:description"
+      content="Here you'll find posts on the video game industry, development, and related anecdotes." />
+    <meta property="og:url" content="https://offthebooks.games/blog/" />
+    <meta property="og:image" content="/img/logo.jpg" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/img/icon.png" />
+    <link href="/css/blog.css${cache_buster}" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1>Off The Books</h1></a>
+      <menu>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/blog/feed.rss">RSS</a></li>
+      </menu>
+    </header>
+    <h2>Recent Posts</h2>
+    <p class="callout">
+      Welcome to the Off The Books Blog. Here you&rsquo;ll find posts on the video game industry,
+      development, and related anecdotes.
+    </p>
+    ${each(posts, ({url, title, date, dateStr, quote}) => `
+    <article class="blog-index">
+      <a href="${url}">
+        <span class="title">${title} &rarr;</span>
+        <span class="date" title="${date.toUTCString()}">${dateStr}</span>
+      </a>
+      <blockquote>
+        <p>${quote}</p>
+      </blockquote>
+    </article>
+    `)}
+    <footer>Copyright ${(new Date()).getFullYear()}</footer>
+  </body>
+</html>

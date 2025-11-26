@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <title>${title} - Off The Books</title>
+    <meta name="description" content="${quote}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta property="og:title" content="${title} - Off The Books" />
+    <meta property="og:site_name" content="Off The Books" />
+    <meta property="og:description" content="${quote}" />
+    <meta property="og:url" content="${url}" />
+    <meta property="og:image" content="${image}" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/img/icon.png" />
+    <link href="/css/blog.css${cache_buster}" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1>Off The Books</h1></a>
+      <menu>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/blog/feed.rss">RSS</a></li>
+      </menu>
+    </header>
+    <article>
+      <hgroup>
+        <h2>${title}</h2>
+        <span class="date" title="${date.toUTCString?.()}">${dateStr}</span>
+      </hgroup>
+      ${content}
+    </article>
+    <footer>Copyright ${(new Date()).getFullYear()}</footer>
+  </body>
+</html>

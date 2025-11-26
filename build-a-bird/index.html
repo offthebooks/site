@@ -1,0 +1,553 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Build-A-Bird</title>
+    <meta name="description" content="Web-based build-your-own clone of Flappy Bird." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta property="og:title" content="Build-A-Bird" />
+    <meta property="og:url" content="https://offthebooks.games/build-a-bird" />
+    <link rel="icon" href="./icon.png" type="image/png" />
+    <link rel="manifest" href="./app.webmanifest" />
+
+    <style>
+      :root {
+        image-rendering: pixelated;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+          sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        background-color: #000;
+        touch-action: none;
+      }
+
+      body.setup {
+        touch-action: auto;
+      }
+
+      a {
+        color: #ced1ff;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        font-size: 75%;
+      }
+
+      #setup {
+        position: relative;
+        padding-right: 10px;
+        width: 310px;
+        height: 480px;
+      }
+
+      #setup input {
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      #game {
+        position: relative;
+        width: 320px;
+        height: 480px;
+        color: black;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABgBAMAAABf62nbAAAAElBMVEX///+24f8m735Trv+Qhf8NV//MI45rAAABUElEQVR42u3TQcrqMBTF8X+wznORbKC4gH4U58WXBRgk+9/KyzV5sxx5Q+Hz0vQc8GcKJWWfDnAaTf0OaLB1cJKAMe9BBBDAgNCfMge3CAmAyxz8FLNC0GBPtUYwQjzNAWZAMXswfwSkCOdaQb6oBwSLqB2Clb5LmIKbWfUVwaZgr/W1illyIOdW61ODMb8PbMA7AMwEs29hChgjAEDQYOwfAZuDHwAKhKcGkWSWLlOwhYhBqLXsU8DZLAFmCECtDwgFLgIEi3CWLyr2fyeLYgeDUM2evqbAz/+/b2EK/Pz/z4H5gm3ZVXbA8kdlA+StFZXssBzkrJINv+esEo6lF5WLF5asElcH+VDp4KBhkR6u2ojkVX1EOtDzWeCeVTq4elE5wJpV0tTqRWQH7bqq5D6KStbr2i+RHTQpsoP13pZI/O5dJevAKh3o+YIv+EDwF6xuEEbjlWXsAAAAAElFTkSuQmCC);
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-shadow:
+          1px 1px 0 white,
+          -1px -1px 0 white,
+          1px -1px 0 white,
+          -1px 1px 0 white;
+      }
+
+      #game.setup #score,
+      #game.setup #begin {
+        display: none;
+      }
+
+      #ground {
+        position: absolute;
+        bottom: 0;
+        height: 15%;
+        width: 100%;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAD1BMVEX6ngCdVAAAYypSKAAAAADxyRdlAAAAq0lEQVR42u3SwQlEMQgEUFvYFtJCWtj+a1oDOzCI/Pivw8wlauSdjJP1D+qg8PykzjUAA4vD0DAGdIDJPXDNMwM6AOeTobedRQa1DmCAFih11s81AAMocBzTaAIGbomMPmCgXb6AmoCBnXnb6wAG6sc3Uxd5xvsagAE0WELfvcDR6wAG+s85qgEY2IMAAsavBmCAjwcf0/5EAzBQjwQ9vW30AAO35SfcgATwA8W4/k5AaTbRAAAAAElFTkSuQmCC);
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #bird {
+        position: absolute;
+        top: 37.5%;
+        left: 45%;
+        width: 10%;
+        height: 32px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAARElEQVR42mP4NY/hPxCAaQRGiDHAGNse/gdhDEUoCo7rwSWBbDCGSKIpANEIBci6sLkDbAIejDABYRIqnwHVToixyHwA2O+hsP3PQhgAAAAASUVORK5CYII=);
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: 0;
+        padding: 0;
+
+        transition-duration: 0.2s;
+        transition-property: transform;
+      }
+
+      #bird.flying {
+        transform: rotate(-20deg);
+      }
+
+      #bird.falling {
+        transform: rotate(75deg);
+        transition-timing-function: ease-in;
+        transition-duration: 0.65s;
+      }
+
+      #bird.dead {
+        animation: spin 0.5s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #score {
+        display: none;
+        position: absolute;
+        left: 5%;
+        top: 1%;
+        height: auto;
+        font-weight: bolder;
+      }
+
+      #scorecard {
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        height: 50%;
+        left: 10%;
+        width: 80%;
+        background: rgba(255, 255, 255, 0.55);
+        border-radius: 5%;
+        transition:
+          opacity 0.25s ease-in-out,
+          top 0.25s ease-in-out;
+        text-align: center;
+      }
+      #scorecard.show {
+        opacity: 1;
+        top: 25%;
+      }
+      #scorecard > p {
+        font-size: 130%;
+      }
+
+      #pipes {
+        width: 100%;
+        height: 100%;
+      }
+
+      #begin {
+        position: absolute;
+        padding: 3%;
+        top: 88%;
+        height: 5%;
+        left: 10%;
+        width: 80%;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.55);
+        border-radius: 10px;
+      }
+
+      #title {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAGFBMVEVHcEz///+24f/6ngBTrv/HLgANV/8kBMjJi45CAAAAAXRSTlMAQObYZgAAAORJREFUeNpiGLKgHAiwCLOXpwFBeQGGOIDtMTiRGIahaA1aBt9Xk7iAiClggzsIKUA+yB2k/v0RgUFGj5CDH88fX0bAxmwuJaeMKcC5ApiYXGQuitKYAnVKCQmCp4CgMS8YPggkQZhSa1TiPG4CjbnRzYjixeAvEfsm8l6CuCcQvFk2JD4SxSpnInaW9XPykohDZEuFgLw45EjEiz/nivFEOEE8D+TaeUle/sO98m8iSjerGoSPgF4JYCIKI2BR+F2qavj5TSG5T0EIkHwLBDExdRUDJOoNlfE/vImacDZAZJyhCgDAVV6wU1/kYgAAAABJRU5ErkJggg==);
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: opacity 0.25s ease-in-out;
+      }
+
+      #title.done {
+        opacity: 0;
+      }
+
+      .pipe {
+        position: absolute;
+        height: 100%;
+        width: 18%;
+        background-size: 100% auto;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAABCAIAAABYG7kIAAAAHUlEQVR42mMoZijbw3ENQv4P/w9CexAIIgJRACEB5b8eSdLwKXUAAAAASUVORK5CYII=);
+        background-repeat: repeat-y;
+        box-shadow: inset 0 0 0 0.15em #000;
+      }
+      .pipe::before {
+        content: ' ';
+        position: absolute;
+        display: block;
+        height: 5%;
+        width: 100%;
+        outline: 0.15em solid black;
+        box-shadow: none;
+        background: inherit;
+      }
+
+      .pipe.upper {
+        transform: scaleY(-1);
+      }
+
+      @media only screen and (max-device-width: 680px) {
+        body.setup {
+          flex-direction: column-reverse;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="setup">
+      <h1>Build-A-Bird</h1>
+
+      <h2>Enter image URLs to customize your Build-A-Bird game:</h2>
+
+      <form>
+        <input id="birdie" type="text" placeholder="Birdie (square)" />
+        <input id="obstacle" type="text" placeholder="Pipe (repeats vertically)" />
+        <input id="foreground" type="text" placeholder="Ground (repeats horizontally)" />
+        <input id="background" type="text" placeholder="Background (repeats horizontally)" />
+        <input id="splash" type="text" placeholder="Title Image" />
+        <input type="submit" value="Play" />
+      </form>
+      <p>please don’t share anything that would make me regret building this 😇</p>
+      <footer>
+        built for your amusement by <a href="https://offthebooks.games/">Off the Books</a>
+      </footer>
+    </div>
+
+    <div id="collision"></div>
+    <div id="game">
+      <div id="pipes"></div>
+      <div id="ground"></div>
+      <div id="bird"></div>
+      <div id="scorecard"></div>
+      <h2 id="score">0</h2>
+      <div id="title"></div>
+      <div id="begin"></div>
+    </div>
+
+    <script type="text/javascript">
+      ;(() => {
+        const options = {}
+        const doc = window.document
+        const body = doc.getElementsByTagName('body')[0]
+        const gameElement = doc.getElementById('game')
+        const scoreElement = doc.getElementById('score')
+        const scorecardElement = doc.getElementById('scorecard')
+        const beginElement = doc.getElementById('begin')
+        const groundElement = doc.getElementById('ground')
+        const birdElement = doc.getElementById('bird')
+        const pipesElement = doc.getElementById('pipes')
+        const isMobile = navigator.userAgent.match(/iPhone|iPad|Android/i)
+        const gameStartTime = new Date().getTime()
+        const gravity = 200
+        const jumpVelocity = 75
+        const pipeCollisionMin = 27
+        const pipeCollisionMax = 55
+        let prevFrameTime = gameStartTime
+        let gameEndTime = 0
+        let startPosition = 37.5
+        let position = startPosition
+        let velocity = 0
+        let unpassedPipes = []
+        let collidablePipes = []
+        let buttonPressed = false
+        let prevCollision = false
+        let state = 'begin'
+        let score = 0
+
+        function scrollBackgrounds(offset) {
+          gameElement.style.backgroundPosition = `${offset}px 0px`
+          groundElement.style.backgroundPosition = `${3 * offset}px 0px`
+        }
+
+        function scrollPipes(frameTime) {
+          const gameWidth = parseInt(gameElement.style.width, 10) / 100
+          const pipes = [...doc.getElementsByClassName('pipe')]
+          collidablePipes = []
+          pipes.forEach((pipe) => {
+            const leftEdge = (pipe.created_at - frameTime) / 37.1 + 100
+            const unpassedIndex = unpassedPipes.indexOf(pipe)
+
+            if (leftEdge <= pipeCollisionMax && leftEdge >= pipeCollisionMin) {
+              collidablePipes.push(pipe)
+            }
+
+            if (unpassedIndex !== -1 && leftEdge < pipeCollisionMin) {
+              unpassedPipes.splice(unpassedIndex, 1)
+              scoreElement.innerHTML = ++score
+            }
+
+            if (leftEdge < -20) {
+              pipesElement.removeChild(pipe)
+            } else {
+              pipe.style.left = Math.floor(gameWidth * leftEdge) + 'px'
+            }
+          })
+        }
+
+        function positionBird() {
+          birdElement.style.top = position + '%'
+          birdElement.style.height = birdElement.clientWidth + 'px'
+        }
+
+        function applyPhysics(dt) {
+          position += velocity * dt + 0.5 * gravity * dt * dt
+          velocity += gravity * dt
+          positionBird()
+          if (buttonPressed) {
+            buttonPressed = false
+            velocity = -jumpVelocity
+            birdElement.className = 'flying'
+          }
+          if (velocity >= 0) {
+            birdElement.className = 'falling'
+          }
+        }
+
+        function detectCollision() {
+          let collision = collidablePipes.some((pipe) => {
+            if (pipe.classList.contains('upper')) {
+              return birdElement.offsetTop < pipe.offsetTop + pipe.offsetHeight
+            } else {
+              return birdElement.offsetTop + birdElement.offsetHeight > pipe.offsetTop
+            }
+          })
+
+          if (birdElement.offsetTop + birdElement.offsetHeight >= groundElement.offsetTop) {
+            // Collision with ground (game over)
+            collision = true
+          }
+
+          if (collision && prevCollision) {
+            gameOver()
+          } else {
+            prevCollision = collision
+          }
+        }
+
+        function gameOver() {
+          const highScore = Math.max(window.localStorage.getItem('high') ?? 0, score)
+          const html = `
+          <h2>Game Over</h2>
+          <p>Score: ${score} </p>
+          <p>High Score: ${highScore}</p>
+          <p>Tap ${isMobile ? '' : 'Spacebar '}to Play Again</p>
+        `
+
+          state = 'over'
+          birdElement.className = ''
+          birdElement.className = 'dead'
+          scoreElement.style.display = 'none'
+          scorecardElement.innerHTML = html
+          scorecardElement.className = 'show'
+          window.localStorage.setItem('high', highScore)
+          gameEndTime = new Date().getTime()
+        }
+
+        function gameLoop() {
+          const bodyWidth = body.clientWidth
+          const bodyHeight = body.clientHeight
+          const curFrameTime = new Date().getTime()
+          const totalTime = curFrameTime - gameStartTime
+          const dt = (curFrameTime - prevFrameTime) / 1000
+          let width = 320
+          let height = 480
+          let scaleFactor = Math.min(bodyWidth / width, bodyHeight / height)
+
+          scaleFactor = scaleFactor >= 1 ? scaleFactor : 1
+          width *= scaleFactor
+          height *= scaleFactor
+
+          gameElement.style.width = width + 'px'
+          gameElement.style.height = height + 'px'
+          doc.getElementsByTagName('html')[0].style.fontSize = scaleFactor + 'em'
+
+          switch (state) {
+            case 'play':
+              scrollBackgrounds(-totalTime * (width / 9500))
+              scrollPipes(curFrameTime)
+              applyPhysics(dt)
+              detectCollision()
+              break
+            case 'over':
+              if (buttonPressed) {
+                buttonPressed = false
+                score = 0
+                scoreElement.innerHTML = score
+                pipesElement.innerHTML = ''
+                scorecardElement.className = ''
+                birdElement.className = ''
+                position = startPosition
+                beginElement.style.display = 'block'
+                state = 'begin'
+              }
+              break
+            case 'begin':
+              if (buttonPressed) {
+                state = 'play'
+                beginElement.style.display = 'none'
+                doc.getElementById('title').className = 'done'
+                scoreElement.style.display = 'block'
+              }
+              scrollBackgrounds(-totalTime * (width / 9500))
+              positionBird()
+              break
+          }
+
+          prevFrameTime = curFrameTime
+          window.requestAnimationFrame(gameLoop)
+        }
+
+        if (window.location.search.length > 0) {
+          // Game mode, search is set, parse for image urls and initialize
+          const link = doc.createElement('link')
+          const [birdie, foreground, background, obstacle, splash] = window.location.search
+            .substr(1)
+            .split(',')
+            .map((str) => str.replace('%2C', ','))
+
+          birdElement.style.backgroundImage = birdie ? `url("${birdie}")` : ''
+          groundElement.style.backgroundImage = foreground ? `url("${foreground}")` : ''
+          gameElement.style.backgroundImage = background ? `url("${background}")` : ''
+          options.pipeImage = obstacle ? `url("${obstacle}")` : ''
+          doc.getElementById('title').style.backgroundImage = splash ? `url("${splash}")` : ''
+
+          // Add Apple meta information
+          link.rel = 'apple-touch-icon'
+          link.href = birdie || 'icon.png'
+          doc.getElementsByTagName('head')[0].appendChild(link)
+
+          // Initiate begin text
+          beginElement.innerHTML = 'Tap ' + (isMobile ? '' : 'Spacebar ') + 'to Begin'
+
+          doc.onkeypress = function (e) {
+            e.preventDefault()
+            if (new Date().getTime() - gameEndTime > 800 && !e.repeat) {
+              var code = typeof e.which == 'number' ? e.which : e.keyCode
+              buttonPressed = code === 32 || buttonPressed
+            }
+          }
+
+          doc.addEventListener('touchstart', function (e) {
+            e.preventDefault()
+            if (new Date().getTime() - gameEndTime > 800) {
+              buttonPressed = true
+            }
+          })
+
+          setInterval(function createPipes() {
+            if (state === 'play') {
+              const gap = 24
+              const min = 5
+              const total = 85
+              const topPipe = doc.createElement('div')
+              const botPipe = doc.createElement('div')
+              const topY = Math.random() * (total - (2 * min + gap)) + min
+              const botY = topY + gap
+
+              topPipe.className = 'pipe upper'
+              botPipe.className = 'pipe'
+              topPipe.style.left = '100%'
+              botPipe.style.left = '100%'
+              topPipe.style.bottom = 100 - topY + '%'
+              botPipe.style.top = botY + '%'
+              topPipe.created_at = botPipe.created_at = new Date().getTime()
+              topPipe.style.backgroundImage = botPipe.style.backgroundImage = options.pipeImage
+
+              pipesElement.appendChild(topPipe)
+              pipesElement.appendChild(botPipe)
+              unpassedPipes.push(topPipe)
+            }
+          }, 2600)
+
+          doc.getElementById('setup').style.display = 'none'
+          gameLoop()
+        } else {
+          // Builder Mode
+          const topPipe = doc.createElement('div')
+          const botPipe = doc.createElement('div')
+
+          function generateURL() {
+            const imgUrls = ['birdie', 'foreground', 'background', 'obstacle', 'splash'].map((id) =>
+              doc.getElementById(id).value.replace('https:', '').replace(',', '%2C')
+            )
+            return `./?${imgUrls.join(',')}`
+          }
+
+          function handleImagesInput(e) {
+            const inputElements = [
+              ['birdie', birdElement],
+              ['foreground', groundElement],
+              ['background', gameElement],
+              ['obstacle', topPipe, botPipe]
+            ]
+
+            inputElements.forEach(([id, ...els]) => {
+              const url = doc.getElementById(id).value
+              els.forEach((el) => {
+                el.style.backgroundImage = url ? `url("${url}")` : ''
+              })
+            })
+          }
+
+          topPipe.className = 'pipe upper'
+          botPipe.className = 'pipe'
+          topPipe.style.left = '64%'
+          botPipe.style.left = '64%'
+          topPipe.style.bottom = '75%'
+          botPipe.style.top = '49%'
+          pipesElement.appendChild(topPipe)
+          pipesElement.appendChild(botPipe)
+
+          body.className = 'setup'
+          gameElement.className = 'setup'
+          doc.getElementById('title').style.display = 'none'
+
+          doc.getElementById('setup').onkeyup = handleImagesInput
+          doc.getElementById('setup').onchange = handleImagesInput
+
+          doc.getElementsByTagName('form')[0].onsubmit = function (e) {
+            window.open(generateURL())
+            return false
+          }
+        }
+      })()
+    </script>
+  </body>
+</html>
