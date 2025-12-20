@@ -1,7 +1,7 @@
 @import url('./vars.css');
 
 :root {
-  font-size: calc(min(16px, 3vw));
+  font-size: calc(min(16px, 3.75vw));
 }
 
 html {
