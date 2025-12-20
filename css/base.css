@@ -1,5 +1,9 @@
 @import url('./vars.css');
 
+:root {
+  font-size: calc(min(16px, 3vw));
+}
+
 html {
   position: relative;
   margin: 0;
@@ -100,6 +104,7 @@ header {
         display: inline-block;
         padding: 0.5rem 1rem;
         color: var(--col-light);
+        /* font-size: 10px; */
         font-weight: bold;
         text-shadow: 1px 1px 2px var(--button-shadow);
       }

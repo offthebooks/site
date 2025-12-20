@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <title>Pixels To-Go - Off The Books</title>
+    <meta name="description" content="Crispnes has let me rediscover the joy of pixel art, and reclaim some of life&rsquo;s random moments to make something fun." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta property="og:title" content="Pixels To-Go - Off The Books" />
+    <meta property="og:site_name" content="Off The Books" />
+    <meta property="og:description" content="Crispnes has let me rediscover the joy of pixel art, and reclaim some of life&rsquo;s random moments to make something fun." />
+    <meta property="og:url" content="/blog/post/pixels-to-go" />
+    <meta property="og:image" content="/blog/media/crispnes.png" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/img/icon.png" />
+    <link href="/css/blog.css?mjdmcpba" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1>Off The Books</h1></a>
+      <menu>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/blog/feed.rss">RSS</a></li>
+      </menu>
+    </header>
+    <article>
+      <hgroup>
+        <h2>Pixels To-Go</h2>
+        <span class="date" title="Sat, 20 Dec 2025 01:23:42 GMT">Dec 19, 2025</span>
+      </hgroup>
+      <p><a href="https://offthebooks.games/crispnes">Crispnes</a> didn&rsquo;t start out with a grand vision. It was initially a side project to generate the <a href="https://www.nesdev.org/wiki/PPU_pattern_tables">character data</a> the NES uses for background and sprite tiles. Seeing polished modern NES projects from folks like <a href="https://morphcat.de">Morphcat Games</a> inspired me to return to game development as a hobby, and Crispnes was initially a means to tinker with NES games on my Mac, where niche tools are much harder to come by.</p>
+      <p><img src="/blog/media/crispnes-hi.gif" alt="Screen capture of Crispnes, it&rsquo;s a loop watching &lsquo;Hi!&rsquo; written on the screen." /></p>
+      <p>As my focus shifted to working on <a href="https://offthebooksgames.itch.io/churro">Churro: Defender of Darnwood</a>, my traditional graphics editing tools were making work on game assets feel cumbersome. I realized some of the experiments I&rsquo;d tried in Crispnes would be helpful here, and without intending it to, it had become fun to be able to use from a mobile browser. This prompted me to pivot to a more generic pixel animation tool.</p>
+      <p>Pixel art often comes down to toggling between two options, one pixel at a time. In many tools, that means thrashing between the pencil and eraser. Even with hotkeys, there&rsquo;s still a cost. My first UI experiment in Crispnes was having the draw tool toggle pixels to the background color when you tap something that&rsquo;s already the selected color. It&rsquo;s a small change, but it made iteration less clunky. On a phone, where sessions might last only a few minutes, reducing that kind of friction adds up.</p>
+      <p><img src="/blog/media/crispnes-animate.gif" alt="Screen capture of Crispnes, clicking through frames of an animation of the Spiritual Stones from Ocarina of Time, then a preview of the animation." /></p>
+      <p>The new trajectory for Crispnes has been to optimize the pixel editing I&rsquo;m doing for my game, and capitalize on spare moments by enabling productive work I can do on my phone. It has helped me recreate the fun I had discovering pixel editing in <a href="https://en.wikipedia.org/wiki/Kid_Pix">Kid Pix</a> as a child, mouse-clicking custom stamps one tiny square at a time. In pixel art, mistakes don&rsquo;t feel like a failure, but a valid part of an iterative process. That lessened the struggle I often felt as a kid making art in more traditional mediums like drawing or painting.</p>
+      <p>Even in its prerelease state, Crispnes has become the tool I&rsquo;m using to design and animate my characters and tilesets. My game&rsquo;s constraints are tight. Sprite dimensions are typically between 8 and 16 pixels, and animations have just a handful of frames. Crispnes makes it easy to sketch, iterate, and tweak my creations at this scale. Having my assets always available means I can easily return to make adjustments when a new idea strikes to improve on something.</p>
+      <p>I&rsquo;m not sure where the long-term future will take Crispnes. I&rsquo;m trying to keep my focus mostly on Churro, as distraction is a persistent problem in indie game development. But low‑fidelity artwork feels like something I can manage by myself, even without formal art training, so I expect this project to stay relevant to whatever projects would come next. If I ever dive into a 3D project, it would likely have low-fidelity models that would work well with Crispnes‑style texture work. For now, Crispnes has let me rediscover the joy of pixel art, and reclaim some of life&rsquo;s random moments to make something fun.</p>
+      <p><img src="/blog/media/crispnes-icon.png" alt="Crispnes app icon when saved to the Dock on macOS." /></p>
+      <p>Crispnes is designed to work best as a web app saved to your home screen, although it should support the same capabilities in any modern browser. Your work is saved automatically in your browser using the IndexedDB API, which has been persistent and reliable in my recent experience. It also caches all the necessary files locally, and should work offline if no network connection is available.</p>
+      <p>The main limitations are missing implementation and UI for custom palettes, and as I&rsquo;m using the NES color palette for Churro, those are the only colors available at present. Additionally, there isn&rsquo;t yet a format to back up your creations beyond the auto-save to your browser, and I can&rsquo;t make any guarantees that it will never see bugs. So, if you create something you don&rsquo;t want to lose, be sure to use one of the features to export a frame or animation sprite sheet. I&rsquo;ve also been using screen recording to capture the animation previews, but would hope to someday have GIF and/or APNG exports.</p>
+      <p>If you give it a try, be sure to let me know. There is no tracking, so I don&rsquo;t know anything about usage unless I see it shared publicly or with me directly. For that matter, there are no dependencies or external code beyond what I’ve personally authored (or cobbled together from tutorials, Stack Overflow, etc.), apart from the browser environment itself. There isn&rsquo;t even a build step, so all the code and files hit the browser as I wrote them. It&rsquo;s not perfect, but I&rsquo;ll keep refactoring as things get unwieldy or stumble across better ideas and patterns to make things maintainable for myself.</p>
+      <p>The <a href="https://github.com/offthebooks/crispnes">repository is public</a>, although there isn&rsquo;t much there that you can&rsquo;t already see in your browser&rsquo;s dev tools. One last thing to note&mdash;the interface for animating has very few bells and whistles. The simplicity means my 10, 8, and 5-year-olds have picked it up without much guidance, and they keep showing off wonderful creations of their own. Because it works offline, I&rsquo;ve saved it to their home screens, and they can use it even though Internet access is restricted on their devices. If it&rsquo;s not for you, it might prove a creative diversion for someone else you know.</p>
+      <p>My aspirations for Crispnes are far short of something feature-rich like <a href="https://www.aseprite.org">Aseprite</a>. But if you are a pixel artist of any skill level, you might find it hits a good sweet spot of utility and fun to play with on the go. I&rsquo;m happy to hear feature requests, though I already have a fair number of things I&rsquo;d like to address myself when I have time.</p>
+    </article>
+    <footer>Copyright 2025</footer>
+  </body>
+</html>
